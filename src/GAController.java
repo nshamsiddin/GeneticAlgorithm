@@ -10,11 +10,13 @@ class GAController {
     Reproduction reproducer;
 
     Population population;
-    FitnessEvaluator fitness;
+    FitnessEvaluator fitnessEvaluator;
+
+    static final char[] model = {'a', 't', 'g', 'c'}; // the model to be achieved
 
     GAController() {
         population = new Population();
-        fitness = new FitnessEvaluator();
+        fitnessEvaluator = new FitnessEvaluator(model);
     }
 
     // start walk-through 02 implementation
@@ -51,20 +53,20 @@ class GAController {
 
     // start walk-through 01 implementation
     void run() {
-        fitness.evaluate(population);
+        fitnessEvaluator.evaluate(population);
     }
 
     public static void main(String[] args) {
         // Walk-through 01
-        //GAController controller = new GAController();
-        //controller.run();
-        //System.out.println(controller.population);
+        GAController controller = new GAController();
+        controller.run();
+        System.out.println(controller.population);
 
         // Walk-through 02
-        GAController controller = new GAController();
-        controller.setSelection(new SelectionFrench());
-        controller.start();
-        controller.setSelection(new SelectionIrish());
-        controller.start();
+        //GAController controller = new GAController();
+        //controller.setSelection(new SelectionFrench());
+        //controller.start();
+        //controller.setSelection(new SelectionIrish());
+        //controller.start();
     }
 }

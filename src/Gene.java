@@ -24,7 +24,7 @@ class Gene {
 
     @Override
     public String toString() {
-        return String.valueOf(code);
+        return String.valueOf(code) + ", "; // improve readability
     }
 
     // for testing purposes
