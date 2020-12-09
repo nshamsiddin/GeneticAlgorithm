@@ -1,3 +1,5 @@
+package entities;
+
 public class BasePair {
 
 	private Base b1, b2;
