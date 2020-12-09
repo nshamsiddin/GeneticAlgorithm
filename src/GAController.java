@@ -53,12 +53,18 @@ class GAController {
 
     // start walk-through 01 implementation
     void run() {
+        // Print the model to be achieved
+        System.out.println("Model: " + String.valueOf(model));
+        // Perform fitness evaluation
         fitnessEvaluator.evaluate(population);
+        // Perform parents selection
+        selector.performSelection(population);
     }
 
     public static void main(String[] args) {
         // Walk-through 01
         GAController controller = new GAController();
+        controller.setSelection(new SelectionRank());
         controller.run();
         System.out.println(controller.population);
 

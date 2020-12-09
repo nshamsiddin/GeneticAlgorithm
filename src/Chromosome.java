@@ -14,6 +14,10 @@ class Chromosome {
         }
     }
 
+    double getFitness() {
+        return fitness;
+    }
+
     void setFitness(double aFitness) {
         fitness = aFitness;
     }
