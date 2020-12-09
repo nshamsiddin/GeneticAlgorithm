@@ -8,9 +8,7 @@ public class BasePair {
 
 	// random generation
 	public BasePair() {
-		List<Base> list = new ArrayList<>();
-		list.addAll(Arrays.asList(Base.A, Base.T, Base.G, Base.C));
-		this.b1 = list.get((int) Math.random() * 3 + 1);
+		this.b1 = Base.getRandom();
 		this.b2 = Base.getPair(this.b1);
 	}
 
@@ -31,6 +29,16 @@ public class BasePair {
 
 	public Base getB2() {
 		return this.b2;
+	}
+
+	public void setB1(Base b) {
+		this.b1 = b;
+		this.b2 = Base.getPair(b);
+	}
+
+	public void setB2(Base b) {
+		this.b2 = b;
+		this.b1 = Base.getPair(b);
 	}
 
 }
