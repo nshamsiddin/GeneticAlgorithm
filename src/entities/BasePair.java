@@ -16,9 +16,14 @@ public class BasePair {
 		setB2(Base.getPair(b1));
 	}
 
+	// craete distinct base pair
 	public BasePair(Base b1, Base b2) {
 		setB1(b1);
 		setB2(b2);
+	}
+
+	public String toString() {
+		return "[" + b1 + " <==> " + b2 + "]\n";
 	}
 
 	public Base getB1() {

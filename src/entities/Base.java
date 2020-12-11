@@ -3,9 +3,11 @@ package entities;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
+// ADENINE, GUANINE, CYTOSINE, THYMINE;
 
 public enum Base {
-	// ADENINE, GUANINE, CYTOSINE, THYMINE;
 	A, G, C, T;
 
 	public static Base getPair(Base b) {
@@ -30,6 +32,6 @@ public enum Base {
 	private static final List<Base> list = new ArrayList<>(Arrays.asList(Base.A, Base.T, Base.G, Base.C));
 
 	public static Base getRandom() {
-		return list.get((int) Math.random() * (list.size() - 1) + 1);
+		return list.get(new Random().nextInt(list.size()));
 	}
 }

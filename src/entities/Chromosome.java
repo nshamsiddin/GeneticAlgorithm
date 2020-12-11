@@ -4,18 +4,36 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Chromosome {
-	private List<DNA> dna;
+	private List<Gene> genes;
+	private static final int geneLength = 2;
 
 	public Chromosome() {
-		setDna(new LinkedList<>());
+		setGenes(new LinkedList<>());
+		for (int i = 0; i < geneLength; i++) {
+			genes.add(new Gene());
+		}
 	}
 
-	public List<DNA> getDna() {
-		return dna;
+	public List<Gene> getGenes() {
+		return genes;
 	}
 
-	public void setDna(List<DNA> dna) {
-		this.dna = dna;
+	public void setGenes(List<Gene> genes) {
+		this.genes = genes;
+	}
+
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		String delimiter = "==========\n";
+		result.append(delimiter);
+		for (Gene g : genes) {
+			result.append(g.toString());
+		}
+		return result.toString();
+	}
+
+	public static void main(String[] args) {
+
 	}
 
 }
