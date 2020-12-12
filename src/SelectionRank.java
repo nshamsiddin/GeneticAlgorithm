@@ -4,27 +4,27 @@ import java.util.List;
 
 class SelectionRank implements Selection {
 
-    List<Chromosome> ranked;
+    List<Individual> ranked;
     final double PRESSURE = 0.3; // the percentage of individuals to be selected
 
     SelectionRank() {
-        ranked = new ArrayList<Chromosome>();
+        ranked = new ArrayList<Individual>();
     }
 
     @Override
     public Individual selectParent(Population aPopulation) {
-        return new Individual();
+        return new Individual(0);
     }
 
     @Override
-    public List<Chromosome> performSelection(Population aPopulation) {
+    public List<Individual> performSelection(Population aPopulation) {
         ranked.addAll(aPopulation.population);
 
         // Reorder the individuals by their fitness value
-        ranked.sort(new Comparator<Chromosome>() {
+        ranked.sort(new Comparator<Individual>() {
             @Override
-            public int compare(Chromosome c1, Chromosome c2) {
-                return (int) (c1.getFitness() - c2.getFitness()); // in ascending order
+            public int compare(Individual i1, Individual i2) {
+                return (int) (i1.getFitness() - i2.getFitness()); // in ascending order
             }
         });
 

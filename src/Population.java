@@ -5,26 +5,27 @@ import java.util.ArrayList;
  */
 class Population {
 
-    int size = 10; // for a population of size 10
-    ArrayList<Chromosome> population = new ArrayList<Chromosome>();
+    final int SIZE = 10; // for a population of size 10
+    ArrayList<Individual> population = new ArrayList<Individual>();
+    int populationCount; // for labelling each of the individuals
 
     // No-arguments constructor. If called generates a
     // random population of Chromosomes.
     Population() {
-        for (int i = 0; i < size; i++) {
-            add(new Chromosome());
+        for (int i = 0; i < SIZE; i++) {
+            add(new Individual(populationCount += 1));
         }
     }
 
-    void add(Chromosome anIndividual) {
-        population.add(anIndividual); // an individual which will be a chromosome
+    void add(Individual anIndividual) {
+        population.add(anIndividual);
     }
 
     @Override
     public String toString() {
         StringBuilder populationAsString = new StringBuilder();
-        for (Chromosome c : population) {
-            populationAsString.append(c.toString() + "\n");
+        for (Individual i : population) {
+            populationAsString.append(i.toString() + "\n");
         }
         return populationAsString.toString();
     }

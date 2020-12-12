@@ -9,7 +9,7 @@ class Gene {
 
     // This is just one "model", using letters is just one way
     // to "represent" genes.
-    static final char[] letters = {'a', 't', 'g', 'c'};
+    static final char[] LETTERS = {'a', 't', 'g', 'c'};
     char[] code;
     Random rand = new Random();
 
@@ -18,7 +18,7 @@ class Gene {
         for (int i = 0; i < code.length; i++) {
             // generates a random int between 0 and 3,
             // which are the possible index values
-            code[i] = letters[rand.nextInt(letters.length)];
+            code[i] = LETTERS[rand.nextInt(LETTERS.length)];
         }
     }
 

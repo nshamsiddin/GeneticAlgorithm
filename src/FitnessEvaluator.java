@@ -1,6 +1,5 @@
 class FitnessEvaluator {
 
-    double fitness;
     char[] model;
 
     FitnessEvaluator(char[] theModel) {
@@ -8,25 +7,35 @@ class FitnessEvaluator {
     }
 
     void evaluate(Population p) {
-        // for every chromosome in the population
-        // evaluate the fitness of each chromosome
-        for (Chromosome c : p.population) {
-            evaluate(c);
+        // for every individual in the population
+        // evaluate the fitness of each individual
+        for (Individual i : p.population) {
+            evaluate(i);
         }
+    }
+
+    void evaluate(Individual i) {
+        // for every chromosome in the individual
+        // evaluate the genetic code of each chromosome
+        double fitness = 0.0;
+        for (Chromosome c : i.chromosomes) {
+            fitness += evaluate(c);
+        }
+        i.setFitness(fitness);
     }
 
     // compare each character in the genetic "code" with the model
     // to calculate the fitness of the individual
-    void evaluate(Chromosome c) {
-        fitness = 0.0;
+    double evaluate(Chromosome c) {
+        double chromosomeFitness = 0.0;
         for (Gene g : c.genes) {
             for (int i = 0; i < g.code.length; i++) {
                 if (g.code[i] == model[i]) {
-                    fitness += 1;
+                    chromosomeFitness += 1;
                 }
             }
         }
-        c.setFitness(fitness);
+        return chromosomeFitness;
     }
 
     // for testing purposes

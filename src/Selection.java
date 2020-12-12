@@ -4,5 +4,5 @@ interface Selection {
 
     Individual selectParent(Population aPopulation);
 
-    List<Chromosome> performSelection(Population aPopulation);
+    List<Individual> performSelection(Population aPopulation);
 }

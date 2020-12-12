@@ -12,11 +12,11 @@ class GAController {
     Population population;
     FitnessEvaluator fitnessEvaluator;
 
-    static final char[] model = {'a', 't', 'g', 'c'}; // the model to be achieved
+    static final char[] MODEL = {'a', 't', 'g', 'c'}; // the model to be achieved
 
     GAController() {
         population = new Population();
-        fitnessEvaluator = new FitnessEvaluator(model);
+        fitnessEvaluator = new FitnessEvaluator(MODEL);
     }
 
     // start walk-through 02 implementation
@@ -54,7 +54,7 @@ class GAController {
     // start walk-through 01 implementation
     void run() {
         // Print the model to be achieved
-        System.out.println("Model: " + String.valueOf(model));
+        System.out.println("Model: " + String.valueOf(MODEL));
         // Perform fitness evaluation
         fitnessEvaluator.evaluate(population);
         // Perform parents selection
