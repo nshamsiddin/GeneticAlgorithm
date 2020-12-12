@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * The context from which the strategy pattern is implemented.
  */
@@ -19,13 +21,20 @@ class GAController {
         fitnessEvaluator = new FitnessEvaluator(MODEL);
     }
 
-    // start walk-through 02 implementation
+    // Merge walk-through implementation 1 & 2
     void start() {
         int generations = 2;
         double mutationRate = 0.1;
+        // Print the model to be achieved
+        System.out.println("Model: " + String.valueOf(MODEL));
         for (int i = 0; i < generations; i++) {
-            Individual parent1 = selector.selectParent(population);
-            Individual parent2 = selector.selectParent(population);
+            // Perform fitness evaluation
+            fitnessEvaluator.evaluate(population);
+            // Perform parents selection
+            List<Individual> parents = selector.performSelection(population);
+
+            //Individual parent1 = selector.selectParent(population);
+            //Individual parent2 = selector.selectParent(population);
 
             //Individual child1 = reproducer.crossover(parent1, parent2);
             //Individual child2 = reproducer.crossover(parent1, parent2);
@@ -51,28 +60,11 @@ class GAController {
         reproducer = aReproductionStrategy;
     }
 
-    // start walk-through 01 implementation
-    void run() {
-        // Print the model to be achieved
-        System.out.println("Model: " + String.valueOf(MODEL));
-        // Perform fitness evaluation
-        fitnessEvaluator.evaluate(population);
-        // Perform parents selection
-        selector.performSelection(population);
-    }
-
     public static void main(String[] args) {
-        // Walk-through 01
+        // Merge walk-through implementation 1 & 2
         GAController controller = new GAController();
         controller.setSelection(new SelectionRank());
-        controller.run();
+        controller.start();
         System.out.println(controller.population);
-
-        // Walk-through 02
-        //GAController controller = new GAController();
-        //controller.setSelection(new SelectionFrench());
-        //controller.start();
-        //controller.setSelection(new SelectionIrish());
-        //controller.start();
     }
 }
