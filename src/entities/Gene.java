@@ -4,33 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gene {
-	private List<BasePair> code;
+	private List<Base> code;
 	private static final int codeLength = 4;
 
 	public Gene() {
 		setCode(new ArrayList<>());
 
 		for (int i = 0; i < codeLength; i++) {
-			// randomly generated base pairs
-			code.add(new BasePair());
+			// randomly generated bases
+			code.add(Base.getRandom());
 		}
 	}
 
-	public List<BasePair> getCode() {
+	public List<Base> getCode() {
 		return code;
 	}
 
-	public void setCode(List<BasePair> code) {
+	public void setCode(List<Base> code) {
 		this.code = code;
 	}
 
 	public String toString() {
 		StringBuilder result = new StringBuilder();
-		String delimiter = "----------\n";
-		result.append(delimiter);
-		for (BasePair b : code) {
-			result.append(b.toString());
+		result.append("{");
+		for (Base b : code) {
+			result.append(b.name());
 		}
+		result.append("}");
 		return result.toString();
 	}
 

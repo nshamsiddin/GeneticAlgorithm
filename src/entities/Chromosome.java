@@ -24,11 +24,12 @@ public class Chromosome {
 
 	public String toString() {
 		StringBuilder result = new StringBuilder();
-		String delimiter = "==========\n";
-		result.append(delimiter);
+		// String delimiter = "==========\n";
+		result.append("[");
 		for (Gene g : genes) {
 			result.append(g.toString());
 		}
+		result.append("]");
 		return result.toString();
 	}
 
