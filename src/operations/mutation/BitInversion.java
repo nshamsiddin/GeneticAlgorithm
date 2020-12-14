@@ -1,5 +1,5 @@
 package operations.mutation;
 
-public class BitInversion {
+public class BitInversion implements IMutation {
     
 }

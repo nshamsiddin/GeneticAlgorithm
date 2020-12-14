@@ -1,5 +1,13 @@
 package operations.crossover;
 
-public class SinglePoint {
-    
+import entities.Population;
+
+public class SinglePoint implements Crossover{
+
+    @Override
+    public Population doCrossover(Population p) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }
