@@ -1,18 +1,24 @@
+/*
+ * Here we are using Singleton pattern
+ * */
 package entities;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class Population {
-
-    private static final Integer polulationSize = 10;
+    private static final Integer POPULATION_SIZE = 10; // Defining the size of initial population
     private List<Individual> individuals;
+    private static final Population INSTANCE = new Population(); // Creating static method to store instance of population
 
-    public Population(Integer size) {
+    private Population() { // constructor is made private so it is not allowed to create instance outside of class
         individuals = new LinkedList<>();
-        for (int i = 0; i < polulationSize; i++) {
+        for (int i = 0; i < POPULATION_SIZE; i++) {
             individuals.add(new Individual());
         }
+    }
+
+    public static Population getInstance() {
+        return INSTANCE;
     }
 
     public String toString() {
