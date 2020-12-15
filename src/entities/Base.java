@@ -1,3 +1,7 @@
+// !!!!
+// Not used for the current implementation
+//
+
 package entities;
 
 import java.util.ArrayList;

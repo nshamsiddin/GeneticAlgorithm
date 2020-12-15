@@ -41,6 +41,4 @@ public class Population {
         this.individuals = individuals;
     }
 
-
-
 }

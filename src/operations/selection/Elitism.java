@@ -1,5 +1,13 @@
 package operations.selection;
 
-public class Elitism implements ISelection {
+import entities.Population;
+
+public class Elitism implements Selection {
+
+    @Override
+    public Population select(Population population) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

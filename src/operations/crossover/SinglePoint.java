@@ -2,12 +2,13 @@ package operations.crossover;
 
 import entities.Population;
 
-public class SinglePoint implements Crossover{
+public class SinglePoint implements Crossover {
 
     @Override
     public Population doCrossover(Population p) {
         // TODO Auto-generated method stub
-        return null;
+        System.out.println("Doing single point crossover...");
+        return p;
     }
 
 }
