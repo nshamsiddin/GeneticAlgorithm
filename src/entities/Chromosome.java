@@ -1,4 +1,4 @@
-package entities;
+package src.entities;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,6 +13,11 @@ public class Chromosome {
 			genes.add(new Gene());
 		}
 	}
+        
+        //My constructor
+        public Chromosome(List<Gene> list){
+            this.genes = list;
+        }
 
 	public List<Gene> getGenes() {
 		return genes;
