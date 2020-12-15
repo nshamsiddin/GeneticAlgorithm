@@ -1,16 +1,21 @@
-package entities;
+package src.entities;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Population {
 
-    private static final Integer polulationSize = 10;
+    private Integer populationSize;
     private List<Individual> individuals;
+    
+    //My code
+    int fittest = 0;
 
     public Population(Integer size) {
+        this.populationSize = size;
         individuals = new LinkedList<>();
-        for (int i = 0; i < polulationSize; i++) {
+        for (int i = 0; i < populationSize; i++) {
             individuals.add(new Individual());
         }
     }
@@ -25,6 +30,8 @@ public class Population {
         }
         return result.toString();
     }
+    
+   
 
     public List<Individual> getIndividuals() {
         return individuals;
@@ -33,9 +40,5 @@ public class Population {
     public void setIndividuals(List<Individual> individuals) {
         this.individuals = individuals;
     }
-
-	public void print() {
-        System.out.println(this.toString());
-	}
 
 }
