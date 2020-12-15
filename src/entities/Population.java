@@ -34,4 +34,8 @@ public class Population {
         this.individuals = individuals;
     }
 
+	public void print() {
+        System.out.println(this.toString());
+	}
+
 }
