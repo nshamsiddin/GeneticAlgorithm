@@ -1,8 +1,8 @@
 package ent;
 
-import factories.crossover.Crossover;
+import java.util.ArrayList;
 
-// import factories.GenerationMethod;
+import factories.crossover.Crossover;
 
 public class PopulationZ extends Population {
 
@@ -13,15 +13,21 @@ public class PopulationZ extends Population {
         this.crossover = crossover;
     }
 
+    /**
+     * @param size
+     */
     @Override
     public void populate(Integer size) {
-        // TODO Auto-generated method stub
+        System.out.println("Populating with Z individuals...");
+        individuals = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            individuals.add(new IndividualZ());
+        }
     }
 
     @Override
     public void crossover() {
-    individuals = crossover.doCrossover(individuals);
+        individuals = crossover.doCrossover(individuals);
     }
-
 
 }
