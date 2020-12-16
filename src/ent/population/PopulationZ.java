@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import ent.individual.IndividualZ;
 import factories.crossover.Crossover;
+import strategies.mutation.Boundary;
+import strategies.select.Rank;
 
 public class PopulationZ extends Population {
 
@@ -11,7 +13,13 @@ public class PopulationZ extends Population {
     Crossover crossover;
 
     public PopulationZ(Crossover crossover) {
+        setGeneration(0);
         this.crossover = crossover;
+        /**
+         * Strategies specific for current concrete product
+         */
+        this.mutation = new Boundary();
+        this.selection = new Rank();
     }
 
     /**

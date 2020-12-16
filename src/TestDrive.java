@@ -1,12 +1,15 @@
 import ent.population.Population;
-import producers.PopulationGenerator;
-import producers.PopulationGeneratorX;
+import producers.*;
 
 public class TestDrive {
 
     public static void main(String[] args) {
         PopulationGenerator generatorX = new PopulationGeneratorX();
-        Population p = generatorX.generatePopulation("X");
-        System.out.println(p.toString());
+        Population pX = generatorX.generatePopulation("X1");
+        System.out.println(pX.toString());
+
+        PopulationGenerator generatorZ = new PopulationGeneratorZ();
+        Population pZ = generatorZ.generatePopulation("Z1");
+        System.out.println(pZ.toString());
     }
 }

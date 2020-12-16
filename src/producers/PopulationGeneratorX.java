@@ -5,10 +5,9 @@ import ent.population.PopulationX;
 import factories.crossover.Crossover;
 import factories.crossover.OnePoint;
 
-
 public class PopulationGeneratorX extends PopulationGenerator {
-    
-    /** 
+
+    /**
      * @param type
      * @return Population
      */
@@ -19,7 +18,7 @@ public class PopulationGeneratorX extends PopulationGenerator {
 
         Crossover crossover = null;
 
-        if (type.equals("X")) {
+        if (type.equals("X1")) {
             crossover = OnePoint.getInstance();
         }
         population = new PopulationX(crossover);
