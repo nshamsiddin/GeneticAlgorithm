@@ -13,16 +13,20 @@ public abstract class PopulationGenerator {
         Population population = createPopulation(type);
         population.populate(100);
 
-        for (int i = 1; i <= 1000; i++) {
-
+        for (int i = 1; i <= 10; i++) {
+            System.out.println();
+            System.out.println("Generation: " + i);
+            System.out.println("------------------------------");
+            
             population.setGeneration(i);
-
+            
             population.crossover();
-
+            
             population.doMutatation();
-
+            
             population.doSelect();
             
+            System.out.println("------------------------------");
         }
 
         return population;
