@@ -4,7 +4,8 @@ import java.util.List;
 
 import ent.Individual;
 
-public interface GenerationMethod {
+public interface GenerationMethod { // not the interface required for an abstract factory,
+                                    // otherwise will provide composition
 
     public List<Individual> doCrossover(List<Individual> individuals);
 

@@ -4,12 +4,11 @@ import ent.Individual;
 import ent.IndividualX;
 import ent.Population;
 
-public class Elitism implements Selection {
+public class Rank implements Selection {
 
     @Override
     public Individual selectParent(Population aPopulation) {
-        System.out.println("Perform selection via Elitism method");
+        System.out.println("Perform selection via Rank method");
         return new IndividualX();
     }
-    
 }
