@@ -1,29 +1,28 @@
-package ent;
+package ent.population;
 
 import java.util.ArrayList;
 
+import ent.individual.IndividualZ;
 import factories.crossover.Crossover;
-import strategies.mutation.BitInversion;
-import strategies.select.Elitism;
 
-public class PopulationX extends Population {
+public class PopulationZ extends Population {
 
     // GenerationMethod generationMethod;
     Crossover crossover;
 
-    public PopulationX(Crossover crossover) {
-        setGeneration(0);
+    public PopulationZ(Crossover crossover) {
         this.crossover = crossover;
-        this.mutation = new BitInversion();
-        this.selection = new Elitism();
     }
 
+    /**
+     * @param size
+     */
     @Override
     public void populate(Integer size) {
-        System.out.println("Populating...");
+        System.out.println("Populating with Z individuals...");
         individuals = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            individuals.add(new IndividualX());
+            individuals.add(new IndividualZ());
         }
     }
 
@@ -31,6 +30,5 @@ public class PopulationX extends Population {
     public void crossover() {
         individuals = crossover.doCrossover(individuals);
     }
-
 
 }
