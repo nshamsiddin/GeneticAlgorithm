@@ -8,8 +8,8 @@ public class BitInversion implements Mutation {
 
     @Override
     public List<Individual> doMutation(List<Individual> individuals) {
-        // TODO Auto-generated method stub
-        return null;
+        System.out.println("Mutation by bit inversion...");
+        return individuals;
     }
 
 }

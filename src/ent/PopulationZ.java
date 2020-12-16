@@ -1,16 +1,17 @@
 package ent;
 
-import factories.crossover.Crossover;
 import factories.mutation.Mutation;
 import factories.selection.Selection;
+import strategies.crossover.Crossover;
 
 // import factories.GenerationMethod;
 
 public class PopulationZ extends Population {
 
     // GenerationMethod generationMethod;
-    Crossover crossover;
+    Mutation mutation;
     Selection selection;
+    
 
     public PopulationZ(Crossover crossover, Selection selection) {
         this.crossover = crossover;
@@ -22,16 +23,16 @@ public class PopulationZ extends Population {
         // TODO Auto-generated method stub
     }
 
-    @Override
-    public void crossover() {
-        individuals = crossover.doCrossover(individuals);
-    }
-
     // @Override
-    // public void mutate() {
-    //     individuals = mutation.doMutation(individuals);
-
+    // public void crossover() {
+    //     individuals = crossover.doCrossover(individuals);
     // }
+
+    @Override
+    public void mutate() {
+        individuals = mutation.doMutation(individuals);
+
+    }
 
     @Override
     public void select() {

@@ -1,4 +1,4 @@
-package factories.crossover;
+package strategies.crossover;
 
 import java.util.List;
 

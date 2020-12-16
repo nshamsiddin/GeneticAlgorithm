@@ -2,29 +2,28 @@ package ent;
 
 import java.util.List;
 
-import factories.mutation.Mutation;
+import strategies.crossover.Crossover;
 
 public abstract class Population {
 
-    Mutation mutation;
+    Crossover crossover;
 
     private Integer generation;
 
     protected List<Individual> individuals;
 
-    public abstract void crossover();
+    // public abstract void crossover();
 
-    // public abstract void mutate();
+    public abstract void mutate();
 
     public abstract void select();
 
     public abstract void populate(Integer size);
 
-    public void doMutation(){
-        mutation.doMutation(individuals);
+    public void doCrossover() {
+        crossover.doCrossover(individuals);
     }
 
-   
     @Override
     public String toString() {
         StringBuffer str = new StringBuffer();
