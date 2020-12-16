@@ -10,7 +10,7 @@ public abstract class PopulationGenerator {
         population.populate(100);
 
         population.crossover();
-        population.mutate();
+        
         population.select();
         return population;
 

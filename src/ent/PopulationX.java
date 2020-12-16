@@ -3,20 +3,19 @@ package ent;
 import java.util.ArrayList;
 
 import factories.crossover.Crossover;
-import factories.mutation.Mutation;
+import factories.mutation.BitInversion;
 import factories.selection.Selection;
 
 public class PopulationX extends Population {
 
     // GenerationMethod generationMethod;
     Crossover crossover;
-    Mutation mutation;
     Selection selection;
 
-    public PopulationX(Crossover crossover, Mutation mutation, Selection selection) {
+    public PopulationX(Crossover crossover, Selection selection) {
         this.crossover = crossover;
-        this.mutation = mutation;
         this.selection = selection;
+        this.mutation = new BitInversion();
     }
 
     @Override
@@ -32,15 +31,16 @@ public class PopulationX extends Population {
         individuals = crossover.doCrossover(individuals);
     }
 
-    @Override
-    public void mutate() {
-        individuals = mutation.doMutation(individuals);
+    // @Override
+    // public void mutate() {
+    //     individuals = mutation.doMutation(individuals);
 
-    }
+    // }
 
     @Override
     public void select() {
         individuals = selection.doSelection(individuals);
     }
+
 
 }

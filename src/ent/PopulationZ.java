@@ -1,35 +1,41 @@
 package ent;
 
-import factory.GenerationMethod;
+import factories.crossover.Crossover;
+import factories.mutation.Mutation;
+import factories.selection.Selection;
+
+// import factories.GenerationMethod;
 
 public class PopulationZ extends Population {
 
-    GenerationMethod generationMethod;
+    // GenerationMethod generationMethod;
+    Crossover crossover;
+    Selection selection;
 
-    public PopulationZ(GenerationMethod generationMethod) {
-        this.generationMethod = generationMethod;
+    public PopulationZ(Crossover crossover, Selection selection) {
+        this.crossover = crossover;
+        this.selection = selection;
     }
 
     @Override
     public void populate(Integer size) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void crossover() {
-        individuals = generationMethod.doCrossover(individuals);
+        individuals = crossover.doCrossover(individuals);
     }
 
-    @Override
-    public void mutate() {
-        individuals = generationMethod.doMutation(individuals);
+    // @Override
+    // public void mutate() {
+    //     individuals = mutation.doMutation(individuals);
 
-    }
+    // }
 
     @Override
     public void select() {
-        individuals = generationMethod.doSelection(individuals);
+        individuals = selection.doSelection(individuals);
     }
 
 }

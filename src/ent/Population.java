@@ -2,7 +2,11 @@ package ent;
 
 import java.util.List;
 
+import factories.mutation.Mutation;
+
 public abstract class Population {
+
+    Mutation mutation;
 
     private Integer generation;
 
@@ -10,11 +14,15 @@ public abstract class Population {
 
     public abstract void crossover();
 
-    public abstract void mutate();
+    // public abstract void mutate();
 
     public abstract void select();
 
     public abstract void populate(Integer size);
+
+    public void doMutation(){
+        mutation.doMutation(individuals);
+    }
 
    
     @Override

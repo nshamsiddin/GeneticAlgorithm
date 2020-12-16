@@ -8,8 +8,8 @@ public class OnePoint implements Crossover {
 
     @Override
     public List<Individual> doCrossover(List<Individual> individuals) {
-        // TODO Auto-generated method stub
-        return null;
+        System.out.println("Performing one point crossover...");
+        return individuals;
     }
 
 }
