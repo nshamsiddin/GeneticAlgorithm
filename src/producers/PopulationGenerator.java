@@ -4,8 +4,7 @@ import ent.population.Population;
 
 public abstract class PopulationGenerator {
 
-    
-    /** 
+    /**
      * @param type
      * @return Population
      */
@@ -14,11 +13,17 @@ public abstract class PopulationGenerator {
         Population population = createPopulation(type);
         population.populate(100);
 
-        population.crossover();
+        for (int i = 1; i <= 1000; i++) {
 
-        population.doMutatation();
+            population.setGeneration(i);
 
-        population.doSelect();
+            population.crossover();
+
+            population.doMutatation();
+
+            population.doSelect();
+            
+        }
 
         return population;
 
