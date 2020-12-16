@@ -15,7 +15,7 @@ public class PopulationGeneratorX extends PopulationGenerator {
         Crossover crossover = null;
 
         if (type.equals("X")) {
-            crossover = new OnePoint();
+            crossover = OnePoint.getInstance();
         }
         population = new PopulationX(crossover);
 
