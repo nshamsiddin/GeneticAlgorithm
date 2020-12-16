@@ -2,26 +2,28 @@ package ent;
 
 import java.util.List;
 
-import strategies.crossover.Crossover;
+import strategies.mutation.Mutation;
+import strategies.select.Selection;
 
 public abstract class Population {
 
-    Crossover crossover;
+    Mutation mutation;
+    Selection selection;
 
     private Integer generation;
 
     protected List<Individual> individuals;
 
-    // public abstract void crossover();
-
-    public abstract void mutate();
-
-    public abstract void select();
+    public abstract void crossover();
 
     public abstract void populate(Integer size);
 
-    public void doCrossover() {
-        crossover.doCrossover(individuals);
+    public void doMutatation() {
+        mutation.doMutation(individuals);
+    }
+
+    public void doSelect() {
+        selection.doSelection(individuals);
     }
 
     @Override

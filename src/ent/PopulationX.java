@@ -2,21 +2,20 @@ package ent;
 
 import java.util.ArrayList;
 
-import factories.mutation.Mutation;
-import factories.selection.Selection;
-import strategies.crossover.OnePoint;
+import factories.crossover.Crossover;
+import strategies.mutation.BitInversion;
+import strategies.select.Elitism;
 
 public class PopulationX extends Population {
 
     // GenerationMethod generationMethod;
-    Mutation mutation;
-    Selection selection;
+    Crossover crossover;
 
-    public PopulationX(Mutation mutation, Selection selection) {
+    public PopulationX(Crossover crossover) {
         setGeneration(0);
-        this.crossover = new OnePoint();
-        this.mutation = mutation;
-        this.selection = selection;
+        this.crossover = crossover;
+        this.mutation = new BitInversion();
+        this.selection = new Elitism();
     }
 
     @Override
@@ -28,20 +27,10 @@ public class PopulationX extends Population {
         }
     }
 
-    // @Override
-    // public void crossover() {
-    //     individuals = crossover.doCrossover(individuals);
-    // }
-
     @Override
-    public void mutate() {
-        individuals = mutation.doMutation(individuals);
-
+    public void crossover() {
+        individuals = crossover.doCrossover(individuals);
     }
 
-    @Override
-    public void select() {
-        individuals = selection.doSelection(individuals);
-    }
 
 }

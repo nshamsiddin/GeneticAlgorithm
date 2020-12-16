@@ -1,4 +1,4 @@
-package factories.mutation;
+package strategies.mutation;
 
 import java.util.List;
 

@@ -2,27 +2,23 @@ package producers;
 
 import ent.Population;
 import ent.PopulationX;
-import factories.mutation.BitInversion;
-import factories.mutation.Mutation;
-import factories.selection.Elitism;
-import factories.selection.Selection;
+import factories.crossover.Crossover;
+import factories.crossover.OnePoint;
+
 
 public class PopulationGeneratorX extends PopulationGenerator {
     @Override
     protected Population createPopulation(String type) {
 
         Population population = null;
-        Mutation mutation = null;
-        Selection selection = null;
+
+        Crossover crossover = null;
 
         if (type.equals("X")) {
-            mutation = new BitInversion();
-            selection = new Elitism();
+            crossover = new OnePoint();
         }
-        population = new PopulationX(mutation, selection);
-        
-        // population.doCrossover();
-        
+        population = new PopulationX(crossover);
+
         return population;
     }
 

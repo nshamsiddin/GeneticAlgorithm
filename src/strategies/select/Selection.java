@@ -1,4 +1,4 @@
-package factories.selection;
+package strategies.select;
 
 import java.util.List;
 
