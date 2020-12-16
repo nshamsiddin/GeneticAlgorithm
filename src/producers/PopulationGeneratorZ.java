@@ -1,9 +1,14 @@
 package producers;
 
-import ent.Population;
+import ent.population.Population;
 
 public class PopulationGeneratorZ extends PopulationGenerator {
 
+    
+    /** 
+     * @param type
+     * @return Population
+     */
     @Override
     protected Population createPopulation(String type) {
         // TODO Auto-generated method stub

@@ -1,12 +1,17 @@
 package producers;
 
-import ent.Population;
-import ent.PopulationX;
+import ent.population.Population;
+import ent.population.PopulationX;
 import factories.crossover.Crossover;
 import factories.crossover.OnePoint;
 
 
 public class PopulationGeneratorX extends PopulationGenerator {
+    
+    /** 
+     * @param type
+     * @return Population
+     */
     @Override
     protected Population createPopulation(String type) {
 

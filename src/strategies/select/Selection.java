@@ -2,7 +2,7 @@ package strategies.select;
 
 import java.util.List;
 
-import ent.Individual;
+import ent.individual.Individual;
 
 public interface Selection {
 

@@ -1,9 +1,14 @@
 package producers;
 
-import ent.Population;
+import ent.population.Population;
 
 public abstract class PopulationGenerator {
 
+    
+    /** 
+     * @param type
+     * @return Population
+     */
     public Population generatePopulation(String type) {
 
         Population population = createPopulation(type);
