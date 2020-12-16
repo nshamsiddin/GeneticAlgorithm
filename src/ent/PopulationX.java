@@ -2,14 +2,21 @@ package ent;
 
 import java.util.ArrayList;
 
-import factory.GenerationMethod;
+import factories.crossover.Crossover;
+import factories.mutation.Mutation;
+import factories.selection.Selection;
 
 public class PopulationX extends Population {
 
-    GenerationMethod generationMethod;
+    // GenerationMethod generationMethod;
+    Crossover crossover;
+    Mutation mutation;
+    Selection selection;
 
-    public PopulationX(GenerationMethod generationMethod) {
-        this.generationMethod = generationMethod;
+    public PopulationX(Crossover crossover, Mutation mutation, Selection selection) {
+        this.crossover = crossover;
+        this.mutation = mutation;
+        this.selection = selection;
     }
 
     @Override
@@ -22,18 +29,18 @@ public class PopulationX extends Population {
 
     @Override
     public void crossover() {
-        individuals = generationMethod.doCrossover(individuals);
+        individuals = crossover.doCrossover(individuals);
     }
 
     @Override
     public void mutate() {
-        individuals = generationMethod.doMutation(individuals);
+        individuals = mutation.doMutation(individuals);
 
     }
 
     @Override
     public void select() {
-        individuals = generationMethod.doSelection(individuals);
+        individuals = selection.doSelection(individuals);
     }
 
 }
