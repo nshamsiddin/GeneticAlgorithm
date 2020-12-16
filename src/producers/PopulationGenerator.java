@@ -9,6 +9,8 @@ public abstract class PopulationGenerator {
         Population population = createPopulation(type);
         population.populate(100);
 
+        population.doCrossover();
+
         population.mutate();
 
         population.select();

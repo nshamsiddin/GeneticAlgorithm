@@ -21,6 +21,7 @@ public class PopulationX extends Population {
 
     @Override
     public void populate(Integer size) {
+        System.out.println("Populating...");
         individuals = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             individuals.add(new IndividualX());

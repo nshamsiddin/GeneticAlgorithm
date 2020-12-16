@@ -21,7 +21,7 @@ public class PopulationGeneratorX extends PopulationGenerator {
         }
         population = new PopulationX(mutation, selection);
         
-        population.doCrossover();
+        // population.doCrossover();
         
         return population;
     }
