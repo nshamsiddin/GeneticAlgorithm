@@ -22,12 +22,12 @@ public abstract class PopulationGenerator {
             System.out.println("------------------------------");
             
             population.setGeneration(i);
-            
+
+            population.doSelect();
+
             population.crossover();
             
             population.doMutation();
-            
-            population.doSelect();
             
             System.out.println("------------------------------");
         }
