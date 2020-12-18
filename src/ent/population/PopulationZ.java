@@ -7,17 +7,23 @@ import factories.crossover.Crossover;
 import strategies.mutation.Boundary;
 import strategies.select.Rank;
 
+/**
+ * Concrete product of the Factory Pattern for mass production.
+ * The method for creation of instances of concrete products is
+ * defined in Factory methods - Crossover in this case;
+ * The concrete Factory is passed by PopulationGeneration subclass
+ * while initiating an instance.
+ */
 public class PopulationZ extends Population {
 
-    // GenerationMethod generationMethod;
+    // Abstract Factory Interface
     Crossover crossover;
 
     public PopulationZ(Crossover crossover) {
         setGeneration(0);
         this.crossover = crossover;
-        /**
-         * Strategies specific for current concrete product
-         */
+
+        // Specific strategies used for the current concrete product
         this.mutation = new Boundary();
         this.selection = new Rank();
     }

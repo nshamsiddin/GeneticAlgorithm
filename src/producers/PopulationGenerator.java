@@ -2,6 +2,9 @@ package producers;
 
 import ent.population.Population;
 
+/**
+ * This class represents the factory interface for product creation.
+ */
 public abstract class PopulationGenerator {
 
     /**
@@ -10,7 +13,7 @@ public abstract class PopulationGenerator {
      */
     public Population generatePopulation(String type) {
 
-        Population population = createPopulation(type);
+        Population population = createPopulation(type); // delegation
         population.populate(100);
 
         for (int i = 1; i <= 10; i++) {
@@ -22,7 +25,7 @@ public abstract class PopulationGenerator {
             
             population.crossover();
             
-            population.doMutatation();
+            population.doMutation();
             
             population.doSelect();
             
@@ -33,6 +36,7 @@ public abstract class PopulationGenerator {
 
     }
 
+    // the factory method of the creator class
     protected abstract Population createPopulation(String type);
 
 }

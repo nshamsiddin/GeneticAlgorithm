@@ -5,6 +5,10 @@ import ent.population.PopulationX;
 import factories.crossover.Crossover;
 import factories.crossover.OnePoint;
 
+/**
+ * This class represents a particular implementation of the factory interface.
+ * PopulationX is being created in this factory implementation.
+ */
 public class PopulationGeneratorX extends PopulationGenerator {
 
     /**

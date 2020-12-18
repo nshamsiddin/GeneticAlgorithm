@@ -3,10 +3,9 @@ package ent.individual;
 import java.util.List;
 
 /**
- * Simplified implementation of individuals containing ArrayList of characters
- * (0,1) as genes. We have eliminated Chromosome, Base, BasePairs for simplicity
+ * Simplified implementation of individuals containing an ArrayList of characters with a particular
+ * encoding. For simplicity we have removed Chromosome, Base, BasePairs classes.
  */
-
 public abstract class Individual {
     protected List<Character> genes;
 
@@ -14,7 +13,7 @@ public abstract class Individual {
      * @return String
      */
     public String toString() {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         result.append("[");
         for (Character c : genes) {
             result.append(c);

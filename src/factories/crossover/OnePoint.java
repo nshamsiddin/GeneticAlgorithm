@@ -4,8 +4,10 @@ import java.util.List;
 
 import ent.individual.Individual;
 
-// Abstract Factory implementation
-
+/**
+ * An actual implementation of the one-point crossover reproduction strategy for the reproduction phase.
+ * (Abstract Factory implementation).
+ */
 public class OnePoint implements Crossover {
 
     // Abstract Factory's Factory method is a thread-safe Singleton class

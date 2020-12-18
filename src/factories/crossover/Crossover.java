@@ -4,6 +4,9 @@ import java.util.List;
 
 import ent.individual.Individual;
 
+/**
+ * An interface that models the reproduction phase of the genetic algorithm.
+ */
 public interface Crossover {
-	public List<Individual> doCrossover(List<Individual> individuals);
+	List<Individual> doCrossover(List<Individual> individuals);
 }

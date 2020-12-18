@@ -4,6 +4,9 @@ import java.util.List;
 
 import ent.individual.Individual;
 
+/**
+ * An interface that models the mutation phase of the genetic algorithm.
+ */
 public interface Mutation {
-	public List<Individual> doMutation(List<Individual> individuals);
+	List<Individual> doMutation(List<Individual> individuals);
 }

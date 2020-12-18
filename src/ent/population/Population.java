@@ -7,7 +7,7 @@ import strategies.mutation.Mutation;
 import strategies.select.Selection;
 
 /**
- *  Abstract product class that required in the Factory Pattern
+ *  Abstract product class that is required in the Factory Pattern
  */
 public abstract class Population {
 
@@ -18,21 +18,15 @@ public abstract class Population {
 
     protected List<Individual> individuals;
 
-    
-    /** 
-     * @param doMutatation(
-     */
-    /**
-     * @param doMutatation(
-     */
+
     public abstract void crossover();
 
     /**
-     * @param doMutatation(
+     * @param size
      */
     public abstract void populate(Integer size);
 
-    public void doMutatation() {
+    public void doMutation() {
         mutation.doMutation(individuals);
     }
 
@@ -45,7 +39,7 @@ public abstract class Population {
      */
     @Override
     public String toString() {
-        StringBuffer str = new StringBuffer();
+        StringBuilder str = new StringBuilder();
         str.append("Generation: " + generation + "\n");
         for (Individual ind : individuals) {
             str.append(ind.toString() + "\n");
@@ -62,6 +56,13 @@ public abstract class Population {
     }
 
     /**
+     * @param generation
+     */
+    public void setGeneration(Integer generation) {
+        this.generation = generation;
+    }
+
+    /**
      * @return List<Individual>
      */
     public List<Individual> getIndividuals() {
@@ -73,13 +74,6 @@ public abstract class Population {
      */
     public void setIndividuals(List<Individual> individuals) {
         this.individuals = individuals;
-    }
-
-    /**
-     * @param generation
-     */
-    public void setGeneration(Integer generation) {
-        this.generation = generation;
     }
 
 }

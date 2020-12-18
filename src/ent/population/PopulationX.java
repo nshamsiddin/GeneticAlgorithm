@@ -8,10 +8,11 @@ import strategies.mutation.BitInversion;
 import strategies.select.Elitism;
 
 /**
- * Concrete product for Factory Pattern for mass production The method of
- * creation of instance of concreate products are defined in Factory methods -
- * Crossover in this case; The concrete Factory is passed by
- * PopulationGeneration subclass while initiating an instance
+ * Concrete product of the Factory Pattern for mass production.
+ * The method for creation of instances of concrete products is
+ * defined in Factory methods - Crossover in this case;
+ * The concrete Factory is passed by PopulationGeneration subclass
+ * while initiating an instance.
  */
 public class PopulationX extends Population {
 
@@ -21,9 +22,8 @@ public class PopulationX extends Population {
     public PopulationX(Crossover crossover) {
         setGeneration(0);
         this.crossover = crossover;
-        /**
-         * Strategies specific for current concrete product
-         */
+
+        // Specific strategies used for the current concrete product
         this.mutation = new BitInversion();
         this.selection = new Elitism();
     }

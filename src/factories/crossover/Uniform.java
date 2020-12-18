@@ -4,6 +4,9 @@ import java.util.List;
 
 import ent.individual.Individual;
 
+/**
+ * An actual implementation of the uniform crossover reproduction strategy for the reproduction phase.
+ */
 public class Uniform implements Crossover {
 
     // Abstract Factory's Factory method is a thread-safe Singleton class

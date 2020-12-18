@@ -2,7 +2,12 @@ package ent.individual;
 
 import java.util.ArrayList;
 
+/**
+ * Specific implementation of an individual containing an ArrayList of characters using
+ * (0,1) as the encoding for the genes.
+ */
 public class IndividualX extends Individual {
+
     public IndividualX() {
         // genes are decoded as bits
         genes = new ArrayList<Character>();
@@ -11,7 +16,6 @@ public class IndividualX extends Individual {
                 genes.add('0');
             } else {
                 genes.add('1');
-
             }
         }
     }
