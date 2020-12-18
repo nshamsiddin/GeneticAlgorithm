@@ -11,7 +11,8 @@ import ent.individual.Individual;
 public class OnePoint implements Crossover {
 
     // Abstract Factory's Factory method is a thread-safe Singleton class
-    private static final OnePoint instance = new OnePoint();
+    // via Double-checked locking
+    private volatile static OnePoint instance;
 
     // private constructor to avoid other classes to use constructor
     private OnePoint() {
@@ -21,6 +22,17 @@ public class OnePoint implements Crossover {
      * @return OnePoint
      */
     public static OnePoint getInstance() {
+        if (instance == null) {
+            // The synchronized block of code now runs only once
+            // when the singleton has not been created yet
+            synchronized (OnePoint.class) {
+                if (instance == null) {
+                    // Providing the singleton with a double checked locking initialization
+                    instance = new OnePoint();
+                }
+            }
+        }
+        // Return the singleton static instance
         return instance;
     }
 
