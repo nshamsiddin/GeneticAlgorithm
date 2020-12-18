@@ -16,9 +16,9 @@ For each generation of the population, the implementation simulates the correspo
 
 Generation: 1
 ------------------------------
+Selection based on elitism
 Performing one point crossover...
 Mutation by bit inversion...
-Selection based on elitism
 ------------------------------
 
 ... up to Generation 10
@@ -27,10 +27,12 @@ Whereas for the PopulationZ (population of individuals of type "Z") the particul
 
 Generation: 1
 ------------------------------
+Selection based on rank
 Performing uniform crossover...
 Mutation by boundary...
-Selection based on rank
 ------------------------------
+
+... up to Generation 10
 
 Finally, the individuals of the last generation for each type of population are printed as the output, for example:
 
